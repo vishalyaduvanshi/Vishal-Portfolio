@@ -16,9 +16,9 @@ const projects = [
     github: "https://github.com/vishalyaduvanshi",
   },
   {
-    title: "Pay-Zone",
+    title: "Ranapay- Giftcard",
     category: "Gift Card Marketplace",
-    image: "/payzone.png",
+    image: "/ranapay.png",
     description:
       "A premium digital gift card marketplace with brand discovery, product browsing, and a modern shopping experience.",
     tech: ["Next.js", "React", "Tailwind CSS"],

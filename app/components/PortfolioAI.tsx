@@ -28,7 +28,7 @@ const questions = [
   "Do you know SQL and databases?",
   "What is your Power BI experience?",
   "Tell me about your AI/ML experience.",
-  "What is Pay-Zone?",
+  "What is Ranapay- Giftcard?",
   "Tell me about Naukri X.",
   "What is PhoolPaudha?",
   "Tell me about BookOurBus.",
@@ -92,9 +92,9 @@ const knowledge: { keywords: string[]; answer: string }[] = [
       "Vishal completed machine-learning training through Technophilia Summer Training associated with IIT Kharagpur and an AI-ML virtual internship supported by India Edu Program (Google for Developers).",
   },
   {
-    keywords: ["pay-zone", "pay zone", "gift card", "giftcard"],
+    keywords: ["Ranapay- Giftcard", "pay zone", "gift card", "giftcard"],
     answer:
-      "Pay-Zone is a premium digital gift-card marketplace project. Its interface includes gift-card categories, popular brands, offers, recommendations and a responsive shopping experience.",
+      "Ranapay- Giftcard is a premium digital gift-card marketplace project. Its interface includes gift-card categories, popular brands, offers, recommendations and a responsive shopping experience.",
   },
   {
     keywords: ["naukri x", "naukrix", "job portal", "recruitment"],
@@ -144,7 +144,7 @@ const knowledge: { keywords: string[]; answer: string }[] = [
 ];
 
 const fallback =
-  "I can help with Vishal's education, skills, projects, training and achievements. Try one of the suggested questions below, or ask about Pay-Zone, Naukri X, PhoolPaudha or BookOurBus.";
+  "I can help with Vishal's education, skills, projects, training and achievements. Try one of the suggested questions below, or ask about Ranapay- Giftcard, Naukri X, PhoolPaudha or BookOurBus.";
 
 function getAnswer(question: string): string {
   const normalized = question.toLowerCase().replace(/[^\w\s/-]/g, " ");

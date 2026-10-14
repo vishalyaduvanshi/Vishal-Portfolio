@@ -51,7 +51,7 @@ const skills = [
 const projects = [
   {
     number: "01",
-    title: "Pay-Zone",
+    title: "Ranapay- Giftcard",
     category: "Gift Card Marketplace",
     description:
       "A premium gift card marketplace focused on modern UI, responsive layouts, product discovery and a smooth shopping experience.",

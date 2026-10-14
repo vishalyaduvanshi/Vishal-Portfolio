@@ -139,9 +139,9 @@ const faqs = [
   },
   {
     category: "Projects",
-    question: "What is Pay-Zone?",
+    question: "What is Ranapay- Giftcard?",
     answer:
-      "Pay-Zone is a gift card marketplace concept focused on product discovery, brand browsing, and a straightforward shopping experience.",
+      "Ranapay- Giftcard is a gift card marketplace concept focused on product discovery, brand browsing, and a straightforward shopping experience.",
   },
   {
     category: "Projects",
