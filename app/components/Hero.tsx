@@ -11,83 +11,93 @@ export default function Hero() {
   return (
     <section
       id="home"
-      className="relative flex min-h-[100svh] w-full items-center overflow-hidden bg-[#030711] text-white"
+      className="relative isolate w-full overflow-hidden bg-[#080B12] text-white sm:min-h-[100svh]"
     >
-      {/* Single background shared visually with the header */}
-      <div className="absolute inset-0 z-0">
+      {/* Background Image: mobile unchanged, desktop completely sharp */}
+      <div className="absolute inset-0 z-[-2] overflow-hidden">
         <Image
           src="/hero.png"
-          alt="Vishal's developer portfolio and coding workspace"
+          alt="Developer workspace background"
           fill
           priority
-          quality={100}
+          quality={95}
           sizes="100vw"
-          className="object-cover object-center"
+          className="scale-[1.01] object-cover object-center blur-[2px] sm:scale-100 sm:blur-none"
         />
       </div>
 
-      {/* Subtle contrast for readable text without hiding the image */}
-      <div className="pointer-events-none absolute inset-0 z-[1] bg-gradient-to-r from-[#030711]/60 via-[#030711]/25 to-transparent" />
-      <div className="pointer-events-none absolute inset-0 z-[1] bg-gradient-to-t from-[#030711]/25 via-transparent to-[#030711]/10" />
+      {/* Keep mobile appearance unchanged */}
+      <div className="pointer-events-none absolute inset-0 z-[-1] bg-[#080B12]/50 sm:bg-[#080B12]/40" />
 
-      <div className="relative z-10 mx-auto flex min-h-[100svh] w-full max-w-[1600px] items-center px-5 pb-12 pt-24 sm:px-10 sm:pb-14 sm:pt-28 lg:px-16 lg:pt-24 xl:px-20">
-        <div className="w-full max-w-[560px]">
-          <div className="mb-6 inline-flex items-center gap-2 rounded-full border border-violet-300/35 bg-[#080d1c]/35 px-4 py-2 text-xs font-medium text-white sm:text-sm">
-            <Sparkles size={15} className="text-violet-300" />
-            Full-Stack Developer
+      {/* Improve desktop text readability without blurring the image */}
+      <div className="pointer-events-none absolute inset-0 z-[-1] bg-gradient-to-r from-[#080B12]/80 via-[#080B12]/60 to-[#080B12]/15 sm:from-[#080B12]/85 sm:via-[#080B12]/55 sm:to-[#080B12]/10" />
+
+      {/* Bottom blending */}
+      <div className="pointer-events-none absolute inset-x-0 bottom-0 z-[-1] h-24 bg-gradient-to-t from-[#080B12]/65 to-transparent sm:h-32" />
+
+      {/* Content */}
+      <div className="relative mx-auto flex w-full max-w-[1600px] items-center px-5 pb-8 pt-7 sm:min-h-[100svh] sm:px-10 sm:pb-14 sm:pt-24 lg:px-16 lg:pt-20 xl:px-20">
+        <div className="w-full max-w-[610px]">
+          {/* Availability */}
+          <div className="mb-5 inline-flex max-w-full flex-wrap items-center gap-2 rounded-full border border-white/25 bg-[#080B12]/80 px-3.5 py-2.5 text-xs font-medium text-white shadow-sm backdrop-blur-sm sm:mb-6 sm:px-4 sm:text-sm">
+            <Sparkles size={16} className="shrink-0 text-violet-300" />
+            <span>Full-Stack Developer</span>
+            <span className="mx-0.5 h-1 w-1 rounded-full bg-slate-400" />
             <span className="h-1.5 w-1.5 rounded-full bg-emerald-400" />
-            Open to Opportunities
+            <span>Open to Opportunities</span>
           </div>
 
-          <p className="mb-3 text-xs font-semibold uppercase tracking-[0.28em] text-white sm:text-sm">
+          <p className="mb-3 text-sm font-semibold uppercase tracking-[0.22em] text-white sm:tracking-[0.28em]">
             Hello, I&apos;m
           </p>
 
-          <h1 className="text-5xl font-extrabold leading-[1.02] tracking-tight sm:text-6xl md:text-7xl lg:text-[76px]">
+          <h1 className="text-[clamp(3.5rem,10vw,5rem)] font-bold leading-[0.96] tracking-[-0.045em] text-white sm:text-6xl md:text-7xl lg:text-[78px]">
             Vishal
-            <span className="block bg-gradient-to-r from-white via-violet-200 to-blue-300 bg-clip-text pb-2 text-transparent">
-              Yadav.
+            <span className="mt-1 block pb-2 text-white">
+              Yadav<span className="text-violet-300">.</span>
             </span>
           </h1>
 
-          <h2 className="mt-4 text-xl font-bold text-white sm:text-2xl">
+          <h2 className="mt-4 max-w-[550px] text-[22px] font-bold leading-snug text-white sm:text-2xl lg:text-[27px]">
             Turning Ideas Into{" "}
-            <span className="text-violet-300">Real Products</span>
+            <span className="text-violet-200">Real Products</span>
           </h2>
 
-          <p className="mt-5 max-w-[510px] text-sm leading-7 text-white sm:text-base sm:leading-8">
+          <p className="mt-5 max-w-[520px] text-[15px] leading-7 text-white sm:text-base sm:leading-8">
             I build modern web applications, data solutions, and scalable
             digital products that solve real-world problems. I focus on clean
             interfaces, reliable functionality, and meaningful user
             experiences.
           </p>
 
-          <div className="mt-6 flex flex-wrap gap-2">
+          {/* Skills */}
+          <div className="mt-5 flex flex-wrap gap-2 sm:mt-6">
             {skills.map((skill) => (
               <span
                 key={skill}
-                className="rounded-full border border-white/25 bg-[#080d1c]/40 px-4 py-2 text-xs font-medium text-white transition hover:border-violet-300/70 hover:bg-violet-500/20 sm:text-sm"
+                className="rounded-lg border border-white/30 bg-[#080B12]/75 px-3.5 py-2.5 text-sm font-medium text-white transition-colors duration-200 hover:border-violet-300/60 hover:bg-white/[0.08] sm:px-4"
               >
                 {skill}
               </span>
             ))}
           </div>
 
-          <div className="mt-8 flex flex-wrap items-center gap-3">
+          {/* Actions */}
+          <div className="mt-7 flex flex-wrap items-center gap-3 sm:mt-8">
             <Link
               href="#projects"
-              className="group inline-flex items-center gap-3 rounded-full bg-gradient-to-r from-violet-600 to-blue-600 px-6 py-3.5 text-sm font-bold text-white shadow-lg shadow-violet-950/30 transition hover:-translate-y-0.5 hover:brightness-110"
+              className="group inline-flex min-h-12 items-center justify-center gap-2.5 rounded-lg bg-violet-600 px-5 py-3.5 text-[15px] font-semibold text-white transition-colors duration-200 hover:bg-violet-500 sm:px-6"
             >
               View My Work
               <ArrowRight
-                size={17}
-                className="transition-transform group-hover:translate-x-1"
+                size={18}
+                className="transition-transform duration-200 group-hover:translate-x-1"
               />
             </Link>
 
             <Link
               href="#contact"
-              className="inline-flex items-center rounded-full border border-white/35 bg-black/20 px-6 py-3.5 text-sm font-semibold text-white transition hover:border-violet-300 hover:bg-white/10"
+              className="inline-flex min-h-12 items-center justify-center rounded-lg border border-white/35 bg-[#080B12]/80 px-5 py-3.5 text-[15px] font-semibold text-white transition-colors duration-200 hover:border-white/60 hover:bg-white/10 sm:px-6"
             >
               Let&apos;s Talk
             </Link>
@@ -97,46 +107,52 @@ export default function Hero() {
               target="_blank"
               rel="noopener noreferrer"
               aria-label="GitHub profile"
-              className="rounded-full border border-white/30 bg-black/20 p-3.5 text-white transition hover:border-violet-300 hover:text-violet-200"
+              className="flex h-12 w-12 items-center justify-center rounded-lg border border-white/35 bg-[#080B12]/80 text-white transition-colors duration-200 hover:border-violet-300/60 hover:text-violet-200"
             >
-              <FaGithub size={18} />
+              <FaGithub size={20} />
             </a>
 
             <a
-              href="https://www.linkedin.com/"
+              href="https://www.linkedin.com/in/vishal-yadav-892113233/"
               target="_blank"
               rel="noopener noreferrer"
               aria-label="LinkedIn profile"
-              className="rounded-full border border-white/30 bg-black/20 p-3.5 text-white transition hover:border-violet-300 hover:text-violet-200"
+              className="flex h-12 w-12 items-center justify-center rounded-lg border border-white/35 bg-[#080B12]/80 text-white transition-colors duration-200 hover:border-violet-300/60 hover:text-violet-200"
             >
-              <FaLinkedinIn size={18} />
+              <FaLinkedinIn size={19} />
             </a>
           </div>
 
-          <div className="mt-9 flex flex-wrap border-t border-white/25 pt-5">
-            <div className="min-w-[100px] pr-6">
-              <p className="text-2xl font-extrabold text-white">7+</p>
-              <p className="mt-1 text-xs text-white/90">Projects</p>
+          {/* Portfolio Highlights */}
+          <div className="mt-7 grid max-w-[480px] grid-cols-3 border-t border-white/30 pt-5 sm:mt-9">
+            <div className="pr-3 sm:pr-6">
+              <p className="text-2xl font-bold tracking-tight text-white sm:text-3xl">
+                7+
+              </p>
+              <p className="mt-1.5 text-xs text-white">Projects</p>
             </div>
 
-            <div className="min-w-[140px] border-l border-white/25 px-6">
-              <p className="text-xl font-extrabold text-white sm:text-2xl">
+            <div className="border-l border-white/30 px-3 sm:px-6">
+              <p className="text-base font-bold text-white sm:text-xl">
                 Full-Stack
               </p>
-              <p className="mt-1 text-xs text-white/90">Development</p>
+              <p className="mt-1.5 text-xs text-white">Development</p>
             </div>
 
-            <div className="min-w-[100px] border-l border-white/25 pl-6">
-              <p className="text-2xl font-extrabold text-white">100%</p>
-              <p className="mt-1 text-xs text-white/90">Commitment</p>
+            <div className="border-l border-white/30 pl-3 sm:pl-6">
+              <p className="text-2xl font-bold tracking-tight text-white sm:text-3xl">
+                100%
+              </p>
+              <p className="mt-1.5 text-xs text-white">Commitment</p>
             </div>
           </div>
         </div>
       </div>
 
-      <div className="pointer-events-none absolute bottom-5 right-7 z-10 hidden items-center gap-3 text-[11px] tracking-[0.18em] text-white lg:flex">
+      {/* Scroll Indicator */}
+      <div className="pointer-events-none absolute bottom-6 right-10 z-10 hidden items-center gap-3 text-[10px] font-medium tracking-[0.16em] text-white lg:flex">
         SCROLL TO EXPLORE
-        <span className="h-px w-12 bg-violet-300" />
+        <span className="h-px w-10 bg-violet-300/80" />
       </div>
     </section>
   );
